@@ -40,5 +40,27 @@ int main()
 
     std::cout << "Predkosc to km\\h";
 
-    std::cout << "Tabulator\ttabulator";
+    std::cout << "Tabulator\ttabulator\n";
+
+    /*
+   56 - sta³a liczbowa
+   Sta³e liczowe mog¹ sk³adaæ siê tylko z:
+   * cyfr arabskich: 0,1,2,3,4,5,6,7,8,9
+   * znaku + lub - znajduj¹cego siê na pocz¹tku wartoœci ozaczaj¹cy znak liczby
+   * znaku . (kropka) oznaczaj¹cy granicê pomiêdzy czêœci¹ ca³kowit¹ a rzeczywist¹
+   */
+    std::cout << -56;
+    std::cout << "\n";
+    std::cout << "56";
+    std::cout << "\n";
+    std::cout << +15.5;
+    std::cout << "\n";
+
+    /* Jeœli wystêpuje potrzeba wyœwietlenia dwóch lub wiêcej wartoœci mo¿na 
+    kontynuowaæ instrukcjê
+    ale te wartoœci nalezy rozdzieliæ znakiem <<.
+    */
+    std::cout << 125.5 << " to jest tekst " << 16 << "\n";
+
+
 }
