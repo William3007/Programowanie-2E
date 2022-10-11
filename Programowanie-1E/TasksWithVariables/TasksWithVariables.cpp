@@ -1,4 +1,7 @@
 #include <iostream>
+#include <cmath>
+
+//using namespace std;
 
 /*
 Napisz funkcjê która pobierze dwie liczby 
@@ -49,11 +52,46 @@ void task2()
     std::cout << "(4 + 15) * 4.0 = " << ((4 + 15) * 4.0) << '\n';
 }
 
+/*
+Napisz funkcjê która obliczy pole trójk¹ta.
+*/
+void task3()
+{
+    float base, height;
+
+    std::cout << "Podaj podstawe trojkata\n";
+    std::cin >> base;
+
+    std::cout << "Podaj wysokosc trojkata\n";
+    std::cin >> height;
+
+    float area;
+    area = 0.5 * base * height;
+
+    std::cout << "Pole trojkata wynosi: " << area << "\n";
+}
+
+/*
+Napisz funkcjê, która obliczy przek¹tn¹ kwadratu.
+*/
+void task4()
+{
+    float side;
+
+    std::cout << "Podaj bok kwadratu\n";
+    std::cin >> side;
+
+    float diagonal;
+    diagonal = side * sqrt(2);
+
+    std::cout << "Przekatna kwadratu: " << diagonal << "\n";
+}
 
 int main()
 {
     //task1();
-    task2();
-
+    //task2();
+    //task3();
+    task4();
 }
 
