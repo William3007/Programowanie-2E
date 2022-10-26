@@ -36,13 +36,28 @@ void task1()
 	}
 	else
 	{
-		std::cout << "Dzielenie przez zero!!!!\n";	
+		std::cout << "Dzielenie przez zero!!!!\n";
 	}
 
 	std::cout << "Koniec programu\n";
 }
 
+/*
+Napisz funkjcê, która wczyta liczbê i wyœwietli informacjê
+czy jest ona dodatnia czy nie.
+*/
+void task2()
+{
+	int numberToCheck;
+
+	std::cout << "Podaj liczbe do sprawdzenia:\n";
+	std::cin >> numberToCheck;
+
+
+}
+
 int main()
 {
-	task1();
+	//task1();
+	task2();
 }
