@@ -90,8 +90,21 @@ void task3()
 	std::cout << "Podaj liczbe do sprawdzenia:\n";
 	std::cin >> numberToCheck;
 
-	std::cout << "Liczba jest w zakresie\n";
-	std::cout << "Liczba nie jest w zakresie\n";
+	if (numberToCheck >= 10)
+	{
+		if (numberToCheck <= 25)
+		{
+			std::cout << "Liczba jest w zakresie\n";
+		}
+		else
+		{
+			std::cout << "Liczba nie jest w zakresie\n";
+		}
+	}
+	else
+	{
+		std::cout << "Liczba nie jest w zakresie\n";
+	}
 }
 
 int main()
