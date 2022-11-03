@@ -16,11 +16,26 @@ Operatory porównania:
 
 argument1 >= argument2
 
-Wynikiem dzia³ania tych operatorów 
+Wynikiem dzia³ania tych operatorów
 jest wartoœæ logiczna true/false typu bool
 
 bool zmienna = true;
 bool zmienna2 = 5 > 74;
+
+*/
+
+/*
+Operatory logiczna:
+F - false
+T - true
+
+			  and		  or		not
+A	B		A && B		A || B		!A
+F	F		  F			  F			T
+F	T		  F			  T			T
+T	F		  F			  T			F
+T   T		  T			  T			F
+
 
 */
 
@@ -90,7 +105,7 @@ void task3()
 	std::cout << "Podaj liczbe do sprawdzenia:\n";
 	std::cin >> numberToCheck;
 
-	if (numberToCheck >= 10)
+	/*if (numberToCheck >= 10)
 	{
 		if (numberToCheck <= 25)
 		{
@@ -104,6 +119,15 @@ void task3()
 	else
 	{
 		std::cout << "Liczba nie jest w zakresie\n";
+	}*/
+
+	if (!(numberToCheck >= 10 && numberToCheck <= 25))
+	{
+		std::cout << "Liczba nie jest w zakresie\n";
+	}
+	else
+	{
+		std::cout << "Liczba jest w zakresie\n";
 	}
 }
 
