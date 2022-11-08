@@ -121,19 +121,61 @@ void task3()
 		std::cout << "Liczba nie jest w zakresie\n";
 	}*/
 
-	if (!(numberToCheck >= 10 && numberToCheck <= 25))
-	{
-		std::cout << "Liczba nie jest w zakresie\n";
-	}
-	else
+	if (numberToCheck >= 10 && numberToCheck <= 25)
 	{
 		std::cout << "Liczba jest w zakresie\n";
 	}
+	else
+	{
+		std::cout << "Liczba nie jest w zakresie\n";
+	}
 }
+
+/*
+Napisz funkcjê która wczyta liczbê i wyœwietli informacjê czy jest ona parzysta czy nie.
+*/
+void task4()
+{
+
+}
+
+/*
+Napisz funkcjê która wczyta liczbê która bêdzie bokiem kwadratu i wyœwietliæ informacjê o polu i obwodzie.
+*/
+void task5()
+{
+
+}
+
+/*
+Zadanie 6
+Napisz funkcjê, która wczyta dwie liczby i wyœwietli wiêksz¹ z nich.
+
+Zadanie 7
+Napisz funkcjê która wczyta trzy liczby i wyœwietli najwiêksz¹ z nich.
+
+Zadanie 8
+Napisz funkcjê, która wczyta dwie liczby i wyœwietli je w kolejnoœci rosn¹cej.
+
+Zadanie 9
+Napisz funkcjê, która wczyta trzy liczby i wyœwietli je w kolejnoœci rosn¹cej.
+
+Zadanie 10
+Napisz funkcjê, która wczyta numer dnia tygodnia i wyœwietli nazwê tego dnia.
+
+Zadanie 11*
+Napisz funkcjê, która wczyta wspó³czynniki równania kwadratowego i wyœwietli pierwiastki tego równania
+
+Zadanie 12
+Napisz funkcjê, która wyœwietli komunikaty "gor¹co", "ciep³o", "zimno", "bardzo zimno"
+w zale¿noœci od wczytanej temperatury
+Zakresy: powy¿ej 30, 15-30, 0-15 i poni¿ej 0.
+*/
 
 int main()
 {
 	//task1();
 	//task2();
-	task3();
+	//task3();
+	task4();
 }
