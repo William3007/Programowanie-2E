@@ -246,7 +246,7 @@ Zadanie 9
 Napisz funkcjê, która wczyta trzy liczby i wyœwietli je w kolejnoœci rosn¹cej.
 */
 
-void task8()
+void task9()
 {
 	int firstNumberFromUser, secondNumberFromUser, thirdNumberFromUser;
 
@@ -276,7 +276,34 @@ void task8()
 /*
 Zadanie 10
 Napisz funkcjê, która wczyta numer dnia tygodnia i wyœwietli nazwê tego dnia.
+*/
 
+void task10()
+{
+	int dayNumber;
+
+	std::cout << "Podaj numer dnia tygodnia:\n";
+	std::cin >> dayNumber;
+
+	if (dayNumber == 1)
+		std::cout << "Poniedzia³ek\n";
+	else if (dayNumber == 2)
+		std::cout << "Wtorek\n";
+	else if (dayNumber == 3)
+		std::cout << "Œroda\n";
+	else if (dayNumber == 4)
+		std::cout << "Czwartek\n";
+	else if (dayNumber == 5)
+		std::cout << "Pi¹tek\n";
+	else if (dayNumber == 6)
+		std::cout << "Sobota\n";
+	else if (dayNumber == 7 || dayNumber == 0)
+		std::cout << "Niedziela\n";
+	else //if (dayNumber < 0 || dayNumber > 7)
+		std::cout << "B³êdny dzieñ\n";
+}
+
+/*
 Zadanie 11*
 Napisz funkcjê, która wczyta wspó³czynniki równania kwadratowego
 i wyœwietli pierwiastki tego równania
@@ -298,5 +325,6 @@ int main()
 	//task5();
 	//task6();
 	//task7();
-	task8();
+	//task8();
+	task10();
 }
