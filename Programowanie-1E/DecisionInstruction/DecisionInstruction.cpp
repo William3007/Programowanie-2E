@@ -301,22 +301,102 @@ void task10()
 		std::cout << "Niedziela\n";
 	else //if (dayNumber < 0 || dayNumber > 7)
 		std::cout << "B³êdny dzieñ\n";
+
+	switch (dayNumber)
+	{
+	case 1:
+		std::cout << "Poniedzia³ek\n";
+		break;
+	case 2:
+		std::cout << "Wtorek\n";
+		break;
+	case 3:
+		std::cout << "Œroda\n";
+		break;
+	case 4:
+		std::cout << "Czwartek\n";
+		break;
+	case 5:
+		std::cout << "Pi¹tek\n";
+		break;
+	case 6:
+		std::cout << "Sobota\n";
+		break;
+	case 0:
+	case 7:
+		std::cout << "Niedziela\n";
+		break;
+	default:
+		std::cout << "B³êdny dzieñ\n";
+	}
 }
 
 /*
 Zadanie 11*
 Napisz funkcjê, która wczyta wspó³czynniki równania kwadratowego
-i wyœwietli pierwiastki tego równania
+i wyœwietli pierwiastki tego równania.
+*/
 
+
+
+/*
 Zadanie 12
 Napisz funkcjê, która wyœwietli komunikaty "gor¹co", "ciep³o", "zimno", "bardzo zimno"
 w zale¿noœci od wczytanej temperatury
 Zakresy: powy¿ej 30, 15-30, 0-15 i poni¿ej 0.
 */
 
+void task12()
+{
+
+}
+
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
+
+	int numberOfTask;
+	std::cout << "1. Napisz funkcjê, któa wczyta dwie liczby i wykona dzielenie na nich\n";
+	std::cout << "2. Napisz funkjcê, która wczyta liczbê i wyœwietli informacjê czy jest ona dodatnia czy nie.\n";
+
+	std::cout << "Podaj numer zadania:\n";
+	std::cin >> numberOfTask;
+
+	switch (numberOfTask)
+	{
+	case 1:
+		task1();
+		break;
+	case 2:
+		task2();
+		break;
+	case 3:
+		task3();
+		break;
+	case 4:
+		task4();
+		break;
+	case 5:
+		task5();
+		break;
+	case 6:
+		task6();
+		break;
+	case 7:
+		task7();
+		break;
+	case 8:
+		task8();
+		break;
+	case 9:
+		task9();
+		break;
+	case 10:
+		task10();
+		break;
+	default:
+		break;
+	}
 
 	//task1();
 	//task2();
@@ -326,5 +406,6 @@ int main()
 	//task6();
 	//task7();
 	//task8();
-	task10();
+	//task9();
+	//task10();
 }
