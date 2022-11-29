@@ -25,7 +25,7 @@ Napisz funkcjê, która wyœwietli wszystkie liczby ca³kowite z przedzia³u <1;10>
 
 void task2()
 {
-    std::cout << "1, 2, 3, 4, 5, 6, 7, 8, 9, 10 \n";
+    std::cout << "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, \n";
 
     int currentNumber = 1;
 
@@ -51,15 +51,38 @@ void task3()
     std::cout << "Podaj górny zakres\n";
     std::cin >> highRange;
 
-    int currentNumber = 1;
-
+    int currentNumber = lowRange;
+    
     do
     {
         std::cout << currentNumber << ", ";
-        //currentNumber = currentNumber + 1;
-        //currentNumber += 1;
         currentNumber++;
-    } while (currentNumber != 11); // (currentNumber < 11)
+    } while (currentNumber != highRange + 1); // (currentNumber <= highRange)
+}
+
+/*
+Zadanie 4
+Zgadnij liczbê.
+*/
+
+void task4()
+{
+    int randomNumber;
+
+    srand(5);
+
+    /*
+    <a;b> a <= b
+
+    <0; b-a>
+    rand() % (b - a + 1) + a;
+
+    */
+    //od 1 do 100
+    randomNumber = rand() % 100 + 1;
+
+    std::cout << "Wylosowana liczba to " << randomNumber << "\n";
+
 }
 
 
@@ -69,5 +92,6 @@ int main()
 
     //task1();
     //task2();
-    task3();
+    //task3();
+    task4();
 }
