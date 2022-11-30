@@ -69,7 +69,7 @@ void task4()
 {
     int randomNumber;
 
-    srand(5);
+    srand(time(NULL));
 
     /*
     <a;b> a <= b
@@ -81,8 +81,21 @@ void task4()
     //od 1 do 100
     randomNumber = rand() % 100 + 1;
 
-    std::cout << "Wylosowana liczba to " << randomNumber << "\n";
+    //std::cout << "Wylosowana liczba to " << randomNumber << "\n";
 
+    int numberFromUser;
+    do
+    {
+        std::cout << "Podaj liczbê:\n";
+        std::cin >> numberFromUser;
+
+        if (numberFromUser > randomNumber)
+            std::cout << "Liczba za du¿a\n";
+        if (numberFromUser < randomNumber)
+            std::cout << "Liczba za ma³a\n";
+    } while (numberFromUser != randomNumber);
+
+    std::cout << "Gratulacje.";
 }
 
 
