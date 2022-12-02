@@ -98,6 +98,56 @@ void task4()
     std::cout << "Gratulacje.";
 }
 
+/*
+Zadanie 5
+Napisz funkcjê, która wyœwietli wszystkie liczby ca³kowite z przedzia³u pobranego od u¿ytkownika
+
+Poprawka do zadania 3 gdzie górny zakres nie mo¿e byæ mniejszy od dolnego.
+*/
+void task5()
+{
+    int lowRange, highRange;
+    std::cout << "Podaj zakres dolny\n";
+    std::cin >> lowRange;
+    std::cout << "Podaj górny zakres\n";
+    std::cin >> highRange;
+
+    int currentNumber = lowRange;
+    if (lowRange > highRange)
+        std::cout << "B³êdny zakres\n";
+
+    while (currentNumber <= highRange)
+    {
+        std::cout << currentNumber << ", ";
+        currentNumber++;
+    }
+    std::cout << "\nTa linijka jest poza petl¹\n";
+}
+
+/*
+Zadanie 6
+Napisz funkcjê która policzy NWD dwóch liczb. NWD - najwiêkszy wspólny dzielnik
+*/
+void task6()
+{
+    int firstNumber, secondNumber;
+    std::cout << "Podaj pierwsz¹ liczbê\n";
+    std::cin >> firstNumber;
+    std::cout << "Podaj drug¹ liczbê\n";
+    std::cin >> secondNumber;
+
+    int dzielnik;
+    if (firstNumber > secondNumber)
+        dzielnik = secondNumber;
+    else
+        dzielnik = firstNumber;
+    //algorytm NWD
+    while (firstNumber % dzielnik > 0 || secondNumber % dzielnik > 0)
+        dzielnik--;
+
+    std::cout << "NWD = " << dzielnik << "\n";
+
+}
 
 int main()
 {
@@ -106,5 +156,7 @@ int main()
     //task1();
     //task2();
     //task3();
-    task4();
+    //task4();
+    //task5();
+    task6();
 }
