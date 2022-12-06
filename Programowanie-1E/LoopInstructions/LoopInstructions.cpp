@@ -145,9 +145,56 @@ void task6()
     while (firstNumber % dzielnik > 0 || secondNumber % dzielnik > 0)
         dzielnik--;
 
-    std::cout << "NWD = " << dzielnik << "\n";
+    //Wersja 2 algorytmu
+    /*
+        NWD(a, b) = a jeœli b = 0
+        NWD(a, b) = NWD(b, a % b) jeœli b != 0
+    */
+    int a = firstNumber;
+    int b = secondNumber;
 
+    while (b != 0)
+    {
+        int tmpA = a;
+        a = b;
+        b = tmpA % b;
+    }
+
+    std::cout << "NWD = " << dzielnik << "\n";
+    std::cout << "NWD = " << a << "\n";
 }
+
+/*
+Zadanie 7
+1 => 1 = 1!
+2 => 2 = 1*2 = 2!
+3 => 6 = 1*2*3 = 3!
+4 => 24 = 1*2*3*4 = 4!
+5 => 120 = 1*2*3*4*5 = 5!
+6 => 720 = 1*2*3*4*5*6 = 6!
+7 => 5040 = 1*2*3*4*5*6*7 = 7!
+8 => 5040 * 8 = 1*2*3*4*5*6*7*8 = 8!
+9 => 9!
+Napisz funkcjê, która policzy wartoœæ silni liczby od u¿ytkownika
+*/
+void task7()
+{
+    int numberFromUser;
+    std::cout << "Podaj liczbê:\n";
+    std::cin >> numberFromUser;
+
+    unsigned long long result = 1;
+
+    int i = 2;
+    while (i <= numberFromUser)
+    {
+        result = result * i;
+        i++;
+    }
+
+    std::cout << numberFromUser << "! = " << result << "\n";
+}
+
 
 int main()
 {
@@ -158,5 +205,6 @@ int main()
     //task3();
     //task4();
     //task5();
-    task6();
+    //task6();
+    task7();
 }
