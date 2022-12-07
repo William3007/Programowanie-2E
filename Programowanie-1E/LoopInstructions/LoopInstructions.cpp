@@ -112,10 +112,10 @@ void task5()
     std::cout << "Podaj górny zakres\n";
     std::cin >> highRange;
 
-    int currentNumber = lowRange;
     if (lowRange > highRange)
         std::cout << "B³êdny zakres\n";
 
+    int currentNumber = lowRange;
     while (currentNumber <= highRange)
     {
         std::cout << currentNumber << ", ";
@@ -185,11 +185,18 @@ void task7()
 
     unsigned long long result = 1;
 
-    int i = 2;
+    /*int i = 2;
     while (i <= numberFromUser)
     {
         result = result * i;
+
         i++;
+    }*/
+              //1       2                 4
+    for (int i = 2; i <= numberFromUser; i++)
+    {
+        //3
+        result = result * i;
     }
 
     std::cout << numberFromUser << "! = " << result << "\n";
