@@ -202,6 +202,19 @@ void task7()
     std::cout << numberFromUser << "! = " << result << "\n";
 }
 
+/*
+Zadanie 8
+Wczytaæ napis i wyœwietliæ ile jest liter 'a' w tym wyrazie.
+*/
+void task8()
+{
+    std::string textFromUser;
+    std::cout << "Podaj wyraz\n";
+    std::cin >> textFromUser;
+
+    std::cout << "U¿ytkownik poda³: " << textFromUser << "\n";
+}
+
 
 int main()
 {
@@ -213,5 +226,6 @@ int main()
     //task4();
     //task5();
     //task6();
-    task7();
+    //task7();
+    task8();
 }
