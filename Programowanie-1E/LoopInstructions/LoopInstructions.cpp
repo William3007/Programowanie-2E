@@ -211,8 +211,18 @@ void task8()
     std::string textFromUser;
     std::cout << "Podaj wyraz\n";
     std::cin >> textFromUser;
-
+     
+    //textFromUser[0] = 'A';
     std::cout << "U¿ytkownik poda³: " << textFromUser << "\n";
+    std::cout << "Napis sk³ada siê z " << textFromUser.length() << " znaków\n";
+    std::cout << "Pierwszy znak z napisu to " << textFromUser[0] << "\n";
+    std::cout << "Ostatni znak z napisu to " << textFromUser[textFromUser.length() - 1] << "\n";
+
+    int coutChar = 0;
+
+    //liczymy znaki 'a'
+
+    std::cout << "Znaków 'a' jest "<< coutChar << "\n";
 }
 
 
