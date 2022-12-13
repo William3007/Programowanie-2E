@@ -219,11 +219,37 @@ void task8()
     std::cout << "Ostatni znak z napisu to " << textFromUser[textFromUser.length() - 1] << "\n";
 
     int coutChar = 0;
-
-    //liczymy znaki 'a'
+    for (int i = 0; i < textFromUser.length(); i++)
+    {
+        if (textFromUser[i] == 'a')
+            coutChar++;
+    }    
 
     std::cout << "Znaków 'a' jest "<< coutChar << "\n";
 }
+
+/*
+Zadanie 9
+Napisz funkcjê, która wczyta wyraz i zamieni du¿e litery na ma³e i odwrotnie
+*/
+void task9()
+{      
+    std::string textFromUser;
+    std::cout << "Podaj wyraz\n";
+    std::cin >> textFromUser;
+
+    for (int i = 0; i < textFromUser.length(); i++)
+    {
+        //if (textFromUser[i] >= 65 && textFromUser[i] <= 90)
+        if (textFromUser[i] >= 'A' && textFromUser[i] <= 'Z')
+            textFromUser[i] = textFromUser[i] + 32;
+        else if (textFromUser[i] >= 'a' && textFromUser[i] <= 'z')
+            textFromUser[i] = textFromUser[i] - 32;
+    }
+
+    std::cout << "Napis po zamianie: " << textFromUser << "\n";
+}
+
 
 
 int main()
@@ -237,5 +263,6 @@ int main()
     //task5();
     //task6();
     //task7();
-    task8();
+    //task8();
+    task9();
 }
