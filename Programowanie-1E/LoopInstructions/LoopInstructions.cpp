@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 /*
 Zadanie 1
@@ -250,7 +251,28 @@ void task9()
     std::cout << "Napis po zamianie: " << textFromUser << "\n";
 }
 
+/*
+Zadanie 10
+Wczytaj liczbê od u¿ytkownika. Program zabezpiecz przed podaniem nie liczby.
+*/
+void task10()
+{
+    int numberFromUser;
+    std::string textFromUser;
+    bool isAllDigit;
+    do
+    {
+        std::cout << "Podaj liczbê\n";
+        //std::cin >> textFromUser;
+        std::getline(std::cin, textFromUser);
+        
+        isAllDigit = true;
+        //sprawdziæ czy tak nie jest
 
+    } while (isAllDigit == false);//(u¿ytkownik nie poda³ liczby);
+
+    std::cout << "Uzytkownik poda³ " << textFromUser << "\n";
+}
 
 int main()
 {
@@ -264,5 +286,6 @@ int main()
     //task6();
     //task7();
     //task8();
-    task9();
+    //task9();
+    task10();
 }
