@@ -268,10 +268,28 @@ void task10()
         
         isAllDigit = true;
         //sprawdziæ czy tak nie jest
+        for (int i = 0; i < textFromUser.length(); i++)
+        {
+            if (textFromUser[i] < '0' || textFromUser[i] > '9')
+            {
+                isAllDigit = false;
+            }
+        }
+        //if (isAllDigit == false)
+        if (!isAllDigit)
+        {
+            std::cout << "Podano b³êdn¹ dan¹. Podaj jeszcze raz.\n";
+        }
 
     } while (isAllDigit == false);//(u¿ytkownik nie poda³ liczby);
 
-    std::cout << "Uzytkownik poda³ " << textFromUser << "\n";
+    numberFromUser = 0;
+    for (int i = 0; i < textFromUser.length(); i++)
+    {
+        numberFromUser = numberFromUser * 10 + (textFromUser[i] - '0');
+    }
+
+    std::cout << "Uzytkownik poda³ " << numberFromUser << "\n";
 }
 
 int main()
