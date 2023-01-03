@@ -1,4 +1,3 @@
-
 //LotOfTasks
 
 /*
@@ -64,9 +63,11 @@ Dla zaawansowanych:
 
 */
 
+#define _USE_MATH_DEFINES
 #include <iostream>
 
 int main()
 {
+    //float pi = 2 * M_PI * promieñ;
     std::cout << "Hello World!\n";
 }
