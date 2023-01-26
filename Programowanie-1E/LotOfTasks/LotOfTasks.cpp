@@ -19,7 +19,7 @@ Instrukcja If:
 3. Program sprawdzaj¹cy czy podany rok jest rokiem przestêpnym
 4. Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej oceny (np. "bardzo dobry" dla oceny 5, "dobry" dla oceny 4 itd.)
 5. Program sprawdzaj¹cy czy podane has³o jest poprawne (np. jeœli has³o jest "abc123", program powinien wyœwietliæ "has³o poprawne", jeœli jest inne, powinien wyœwietliæ "has³o niepoprawne").
-6.Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
+6. Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
 7. Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury (np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza, "ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
 
 Pêtle:
@@ -66,8 +66,98 @@ Dla zaawansowanych:
 #define _USE_MATH_DEFINES
 #include <iostream>
 
+//7. Program obliczaj¹cy objêtoœæ kuli o promieniu r
+void task1()
+{
+    double r;
+    std::cout << "Podaj promieñ\n";
+    std::cin >> r;
+
+    double v = 4.0 / 3 * M_PI * r * r * r;
+
+    std::cout << "Objêtoœæ kuli:" << v << "\n";
+}
+
+//6. Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
+void task2()
+{
+    int day, month, year;
+    std::cout << "Podaj dzieñ, miesi¹c i rok\n";
+    std::cin >> day >> month >> year;
+
+    if (day < 1 || month < 1 || year == 0)
+    {
+        std::cout << "B³êdna data\n";
+        return;
+    }
+
+    if (month > 12)
+    {
+        std::cout << "B³êdny miesi¹c (za du¿y)\n";
+        return;
+    }
+
+    if (day > 31)
+    {
+        std::cout << "B³êdny dzieñ (za du¿y)\n";
+        return;
+    }
+
+    if (day == 31 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11))
+    {
+        std::cout << "B³êdny dzieñ (za du¿y)\n";
+        return;
+    }
+
+    if (day > 29 && month == 2)
+    {
+        std::cout << "B³êdny dzieñ (za du¿y)\n";
+        return;
+    }
+
+    if (day == 29 && month == 2  && !(year % 4 == 0 && year % 100 != 0 || year % 400 == 0))
+    {
+        std::cout << "B³êdny dzieñ (za du¿y)\n";
+        return;
+    }
+
+    std::cout << "Data jest prawid³owa\n";
+}
+
+//1. Program sprawdzaj¹cy czy podana liczba jest liczb¹ pierwsz¹ (czyli tak¹, która dzieli siê tylko przez 1 i przez siebie sam¹)
+void task3()
+{
+    int number;
+    std::cout << "Podaj liczbê\n";
+    std::cin >> number;
+
+    //zak³adamy ¿e liczba jest pierwsza
+    int isPrime = 1;
+
+    //algorytm sprawdzaj¹cy czy nie jest pierwsza
+    for (int i = 2; i < number; i++)
+    {
+        if (number % i == 0)
+        {
+            isPrime = 0;
+            break;
+        }
+    }
+
+    if (isPrime == 1)
+    {
+        std::cout << "Liczba jest pierwsza\n";
+    }
+    else
+    {
+        std::cout << "Liczba nie jest pierwsza\n";
+    }
+
+}
+
 int main()
 {
     //float pi = 2 * M_PI * promieñ;
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+    task3();
 }
