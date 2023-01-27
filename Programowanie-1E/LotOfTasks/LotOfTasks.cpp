@@ -135,7 +135,7 @@ void task3()
     int isPrime = 1;
 
     //algorytm sprawdzaj¹cy czy nie jest pierwsza
-    for (int i = 2; i < number; i++)
+    for (int i = 2; i < sqrt(number); i++)
     {
         if (number % i == 0)
         {
