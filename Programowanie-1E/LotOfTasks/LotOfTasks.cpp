@@ -69,95 +69,123 @@ Dla zaawansowanych:
 //7. Program obliczaj¹cy objêtoœæ kuli o promieniu r
 void task1()
 {
-    double r;
-    std::cout << "Podaj promieñ\n";
-    std::cin >> r;
+	double r;
+	std::cout << "Podaj promieñ\n";
+	std::cin >> r;
 
-    double v = 4.0 / 3 * M_PI * r * r * r;
+	double v = 4.0 / 3 * M_PI * r * r * r;
 
-    std::cout << "Objêtoœæ kuli:" << v << "\n";
+	std::cout << "Objêtoœæ kuli:" << v << "\n";
 }
 
 //6. Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
 void task2()
 {
-    int day, month, year;
-    std::cout << "Podaj dzieñ, miesi¹c i rok\n";
-    std::cin >> day >> month >> year;
+	int day, month, year;
+	std::cout << "Podaj dzieñ, miesi¹c i rok\n";
+	std::cin >> day >> month >> year;
 
-    if (day < 1 || month < 1 || year == 0)
-    {
-        std::cout << "B³êdna data\n";
-        return;
-    }
+	if (day < 1 || month < 1 || year == 0)
+	{
+		std::cout << "B³êdna data\n";
+		return;
+	}
 
-    if (month > 12)
-    {
-        std::cout << "B³êdny miesi¹c (za du¿y)\n";
-        return;
-    }
+	if (month > 12)
+	{
+		std::cout << "B³êdny miesi¹c (za du¿y)\n";
+		return;
+	}
 
-    if (day > 31)
-    {
-        std::cout << "B³êdny dzieñ (za du¿y)\n";
-        return;
-    }
+	if (day > 31)
+	{
+		std::cout << "B³êdny dzieñ (za du¿y)\n";
+		return;
+	}
 
-    if (day == 31 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11))
-    {
-        std::cout << "B³êdny dzieñ (za du¿y)\n";
-        return;
-    }
+	if (day == 31 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11))
+	{
+		std::cout << "B³êdny dzieñ (za du¿y)\n";
+		return;
+	}
 
-    if (day > 29 && month == 2)
-    {
-        std::cout << "B³êdny dzieñ (za du¿y)\n";
-        return;
-    }
+	if (day > 29 && month == 2)
+	{
+		std::cout << "B³êdny dzieñ (za du¿y)\n";
+		return;
+	}
 
-    if (day == 29 && month == 2  && !(year % 4 == 0 && year % 100 != 0 || year % 400 == 0))
-    {
-        std::cout << "B³êdny dzieñ (za du¿y)\n";
-        return;
-    }
+	if (day == 29 && month == 2 && !(year % 4 == 0 && year % 100 != 0 || year % 400 == 0))
+	{
+		std::cout << "B³êdny dzieñ (za du¿y)\n";
+		return;
+	}
 
-    std::cout << "Data jest prawid³owa\n";
+	std::cout << "Data jest prawid³owa\n";
 }
 
 //1. Program sprawdzaj¹cy czy podana liczba jest liczb¹ pierwsz¹ (czyli tak¹, która dzieli siê tylko przez 1 i przez siebie sam¹)
 void task3()
 {
-    int number;
-    std::cout << "Podaj liczbê\n";
-    std::cin >> number;
+	int number;
+	std::cout << "Podaj liczbê\n";
+	std::cin >> number;
 
-    //zak³adamy ¿e liczba jest pierwsza
-    int isPrime = 1;
+	//zak³adamy ¿e liczba jest pierwsza
+	int isPrime = 1;
 
-    //algorytm sprawdzaj¹cy czy nie jest pierwsza
-    for (int i = 2; i < sqrt(number); i++)
-    {
-        if (number % i == 0)
-        {
-            isPrime = 0;
-            break;
-        }
-    }
+	//algorytm sprawdzaj¹cy czy nie jest pierwsza
+	for (int i = 2; i < sqrt(number); i++)
+	{
+		if (number % i == 0)
+		{
+			isPrime = 0;
+			break;
+		}
+	}
 
-    if (isPrime == 1)
-    {
-        std::cout << "Liczba jest pierwsza\n";
-    }
-    else
-    {
-        std::cout << "Liczba nie jest pierwsza\n";
-    }
+	if (isPrime == 1)
+	{
+		std::cout << "Liczba jest pierwsza\n";
+	}
+	else
+	{
+		std::cout << "Liczba nie jest pierwsza\n";
+	}
+
+}
+
+//1. Program implementuj¹cy algorytm szyfrowania Cezara (proste szyfrowanie, w którym ka¿dy znak w tekœcie jest zastêpowany innym znakiem, przesuniêtym o sta³¹ liczbê pozycji w alfabecie).
+void task4()
+{
+	std::string textFromUser;
+	std::cout << "Podaj napis\n";
+	std::cin >> textFromUser;
+	int shift = 3;
+	//                012
+	//textFromUser = "A8a";
+	//textFromUser[1] = 'X'; // AXa
+	for (int i = 0; i < textFromUser.length(); i++)
+	{
+		//ma³e litery
+		if (textFromUser[i] >= 97 && textFromUser[i] <= 122)
+		{
+			textFromUser[i] = textFromUser[i] + shift;
+			if (textFromUser[i] > 'z')
+			{
+				textFromUser[i] = textFromUser[i] - 25;
+			}
+		}
+	}
+
+	std::cout << "Po zaszyfrowaniu: " << textFromUser << "\n";
+
 
 }
 
 int main()
 {
-    //float pi = 2 * M_PI * promieñ;
-    //std::cout << "Hello World!\n";
-    task3();
+	//float pi = 2 * M_PI * promieñ;
+	//std::cout << "Hello World!\n";
+	task4();
 }
