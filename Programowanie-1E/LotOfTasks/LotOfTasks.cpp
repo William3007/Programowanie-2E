@@ -161,31 +161,79 @@ void task4()
 	std::string textFromUser;
 	std::cout << "Podaj napis\n";
 	std::cin >> textFromUser;
-	int shift = 3;
-	//                012
-	//textFromUser = "A8a";
-	//textFromUser[1] = 'X'; // AXa
+	int shift = 1;
+
 	for (int i = 0; i < textFromUser.length(); i++)
 	{
 		//ma³e litery
-		if (textFromUser[i] >= 97 && textFromUser[i] <= 122)
+		if (textFromUser[i] >= 97 && textFromUser[i] <= 'z')
 		{
 			textFromUser[i] = textFromUser[i] + shift;
+
 			if (textFromUser[i] > 'z')
 			{
-				textFromUser[i] = textFromUser[i] - 25;
+				textFromUser[i] = textFromUser[i] - 26;
+			}
+		}
+
+		if (textFromUser[i] >= 'A' && textFromUser[i] <= 'Z')
+		{
+			textFromUser[i] = textFromUser[i] + shift;
+
+			if (textFromUser[i] > 'Z')
+			{
+				textFromUser[i] = textFromUser[i] - 26;
+			}
+		}
+
+		if (textFromUser[i] >= '0' && textFromUser[i] <= '9')
+		{
+			textFromUser[i] = textFromUser[i] + shift;
+
+			if (textFromUser[i] > '9')
+			{
+				textFromUser[i] = textFromUser[i] - 10;
 			}
 		}
 	}
 
 	std::cout << "Po zaszyfrowaniu: " << textFromUser << "\n";
+}
 
+//8. Program wyœwietlaj¹cy na ekranie ci¹g Fibonacciego do 20 elementu
+//(ci¹g Fibonacciego to ci¹g gdzie ka¿dy element jest sum¹ dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+void task5()
+{
+	int count = 30;
+	std::cout << "0, 1, ";
 
+	int f2, f1;
+	int f;
+
+	f2 = 0;
+	f1 = 1;
+	for (int i = 2; i < count; i++)
+	{
+		f = f2 + f1;
+		std::cout << f << ", ";
+		f2 = f1;
+		f1 = f;
+	}
+}
+
+//5. Napisz program, który pobiera od u¿ytkownika ci¹g znaków i wyœwietla liczbê samog³osek i spó³g³osek w tym ci¹gu.
+void task6()
+{
+	std::string textFromUser;
+	std::cout << "Podaj wyraz\n";
+	std::cin >> textFromUser;
+
+	"Ala"
 }
 
 int main()
 {
 	//float pi = 2 * M_PI * promieñ;
 	//std::cout << "Hello World!\n";
-	task4();
+	task5();
 }
