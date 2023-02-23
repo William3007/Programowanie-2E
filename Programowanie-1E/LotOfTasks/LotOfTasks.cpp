@@ -228,7 +228,70 @@ void task6()
 	std::cout << "Podaj wyraz\n";
 	std::cin >> textFromUser;
 
-	"Ala"
+	int sumOfVowel = 0;
+
+	for (int i = 0; i < textFromUser.length(); i++)
+	{
+		if (textFromUser[i] == 'a'
+			|| textFromUser[i] == 'e'
+			|| textFromUser[i] == 'i'
+			|| textFromUser[i] == 'o'
+			|| textFromUser[i] == 'u'
+			|| textFromUser[i] == 'x'
+			|| textFromUser[i] == 'y'
+			|| textFromUser[i] == 'A'
+			|| textFromUser[i] == 'E'
+			|| textFromUser[i] == 'I'
+			|| textFromUser[i] == 'O'
+			|| textFromUser[i] == 'U'
+			|| textFromUser[i] == 'X'
+			|| textFromUser[i] == 'Y'
+			)
+			sumOfVowel++;
+	}
+
+	std::cout << "Iloœæ samog³osek: " << sumOfVowel << "\n";
+
+	int sumOfConsonant = 0;
+	std::string stringWidthConsonants = "bcdfghjklmnprstwzBCDFGHJKLMNPRSTWZ";
+
+	for (int i = 0; i < textFromUser.length(); i++)
+	{
+		//wersja 1
+		bool isConsonant = false;
+		for (int j = 0; j < stringWidthConsonants.length(); j++)
+		{
+			if (textFromUser[i] == stringWidthConsonants[j])
+			{
+				isConsonant = true;
+				break;
+			}
+		}
+
+		//wersja2
+		//stringWidthConsonants = "bcd";
+		//textFromUser[i] = "c";
+		isConsonant = true;
+		int coutOfNegativeCheck = 0;
+		for (int j = 0; j < stringWidthConsonants.length(); j++)
+		{
+			if (textFromUser[i] != stringWidthConsonants[j])
+			{
+				coutOfNegativeCheck++;
+			}
+			else
+			{
+				break;
+			}
+		}
+		if (coutOfNegativeCheck == stringWidthConsonants.length())
+			isConsonant = false;
+
+		//wspólna czêœæ dla obu wersji
+		if (isConsonant == true)
+			sumOfConsonant++;
+	}
+	std::cout << "Iloœæ spó³g³osek: " << sumOfConsonant << "\n";
 }
 
 int main()
