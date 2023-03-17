@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Funkcje", "04. Funkcje"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FunctionApp", "FunctionApp\FunctionApp.vcxproj", "{B9FD6996-E27C-4E6F-A7BD-79CA60481C90}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PeselConsoleApplication", "PeselConsoleApplication\PeselConsoleApplication.vcxproj", "{202C98AF-C586-4D28-A238-AD3A1B71E3BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -79,6 +81,14 @@ Global
 		{B9FD6996-E27C-4E6F-A7BD-79CA60481C90}.Release|x64.Build.0 = Release|x64
 		{B9FD6996-E27C-4E6F-A7BD-79CA60481C90}.Release|x86.ActiveCfg = Release|Win32
 		{B9FD6996-E27C-4E6F-A7BD-79CA60481C90}.Release|x86.Build.0 = Release|Win32
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Debug|x64.ActiveCfg = Debug|x64
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Debug|x64.Build.0 = Debug|x64
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Debug|x86.ActiveCfg = Debug|Win32
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Debug|x86.Build.0 = Debug|Win32
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Release|x64.ActiveCfg = Release|x64
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Release|x64.Build.0 = Release|x64
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Release|x86.ActiveCfg = Release|Win32
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +100,7 @@ Global
 		{6CE341F6-EB28-4306-AD40-9E1E02EDAF55} = {946F53B5-7C64-4ACB-935B-1500E3E2B056}
 		{DBE6C6B3-89EA-4429-9D28-27B5F91C1AF6} = {E38DFE25-7047-40F3-B194-30BD5D90FFBE}
 		{B9FD6996-E27C-4E6F-A7BD-79CA60481C90} = {1A37EEDE-662F-4A0A-9FFC-3DC9E4E39F16}
+		{202C98AF-C586-4D28-A238-AD3A1B71E3BB} = {E38DFE25-7047-40F3-B194-30BD5D90FFBE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77A83098-39B9-4A8F-A584-1CBAB34C0F7D}
