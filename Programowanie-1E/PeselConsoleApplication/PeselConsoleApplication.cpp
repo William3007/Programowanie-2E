@@ -17,7 +17,26 @@ std::string getPesel()
 
 bool checkPesel(std::string stringPesel)
 {
+    //d³ugoœæ 11 znaków
+    if (stringPesel.length() != 11)
+        return false;
+     
+    //tylko cyfry
+    for (int i = 0; i < 11; i++)
+    {
+        if (stringPesel[i] < '0'
+            || stringPesel[i] > '9')
+        {
+            return false;
+        }
+    }
+    
+     
+    //sprawdzenie poprawnoœci miesi¹ca
+    //sprawdzenie poprawnoœci dnia
+    //sprawdzenie cyfry kontrolnej
 
+    return true;
 }
 
 int main()
@@ -27,6 +46,7 @@ int main()
     if (checkPesel(stringPesel) == true)
     {
         //pesel poprawny
+        std::cout << "Pesel poprawny\n";
     }
     else
     {
