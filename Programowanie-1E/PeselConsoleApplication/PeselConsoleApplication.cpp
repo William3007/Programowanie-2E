@@ -15,11 +15,22 @@ std::string getPesel()
     return stringPesel;
 }
 
-bool checkPesel(std::string stringPesel)
+bool checkPeselLength(std::string stringPesel, std::string& errorMessage)
 {
     //d³ugoœæ 11 znaków
     if (stringPesel.length() != 11)
+    {
+        errorMessage = "Pesel powinien mieæ 11 znaków";
         return false;
+    }
+    return true;
+}
+
+bool checkPesel(std::string stringPesel, std::string& errorMessage)
+{
+    if (checkPeselLength(stringPesel, errorMessage) == false)
+        return false;
+
      
     //tylko cyfry
     for (int i = 0; i < 11; i++)
@@ -27,6 +38,7 @@ bool checkPesel(std::string stringPesel)
         if (stringPesel[i] < '0'
             || stringPesel[i] > '9')
         {
+            errorMessage = "Pesel powinien sk³adaæ siê z samych cyfr";
             return false;
         }
     }
@@ -42,8 +54,9 @@ bool checkPesel(std::string stringPesel)
 int main()
 {
     std::string stringPesel = getPesel();
+    std::string errorMessage = "";
 
-    if (checkPesel(stringPesel) == true)
+    if (checkPesel(stringPesel, errorMessage) == true)
     {
         //pesel poprawny
         std::cout << "Pesel poprawny\n";
@@ -52,5 +65,6 @@ int main()
     {
         //pesel niepoprawny
         std::cout << "Podany numer pesel jest niepoprawny\n";
+        std::cout << "Kominikat: " << errorMessage << "\n";
     }
 }
