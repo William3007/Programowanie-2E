@@ -44,7 +44,7 @@ bool checkPeselAllDigits(std::string stringPesel, std::string& errorMessage)
 bool checkPeselMonth(std::string stringPesel, std::string& errorMessage)
 {
 	/*
-	1900-1999  1-12 +0
+	1900-1999 01-12 +0
 	2000-2099 21-32 +20
 	2100-2199 41-52 +40
 	2200-2299 61-72 +60
@@ -82,6 +82,25 @@ bool checkPeselMonth(std::string stringPesel, std::string& errorMessage)
 		if (stringPesel[2] == i + 1 && stringPesel[3] >= '0' && stringPesel[3] <= '2') //10 - 12
 			return true;
 	}
+
+	//wersja 3
+	int month = (stringPesel[2] - 48) * 10 + (stringPesel[3] - 48) * 1;
+	if (month >= 1 && month <= 12)
+		return true;
+	if (month >= 21 && month <= 32)
+		return true;
+	if (month >= 41 && month <= 52)
+		return true;
+	if (month >= 61 && month <= 72)
+		return true;
+	if (month >= 81 && month <= 92)
+		return true;
+
+	//wersja 4
+	int monthV4 = (stringPesel[2] - 48) * 10 + (stringPesel[3] - 48) * 1;
+	monthV4 = monthV4 % 20;
+	if (monthV4 >= 1 && monthV4 <= 12)
+		return true;
 
 	return false;
 }
