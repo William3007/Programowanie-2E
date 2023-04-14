@@ -7,6 +7,11 @@
  */
 #include <iostream>
 
+int convertCharsToInt(char firstChar, char secondChar)
+{
+	return (firstChar - 48) * 10 + (secondChar - 48) * 1;
+}
+
 std::string getPesel()
 {
 	std::string stringPesel;
@@ -44,7 +49,7 @@ bool checkPeselAllDigits(std::string stringPesel, std::string& errorMessage)
 bool checkPeselMonth(std::string stringPesel, std::string& errorMessage)
 {
 	/*
-	1900-1999 01-12 +0
+	1900-1999 01-12 +0 
 	2000-2099 21-32 +20
 	2100-2199 41-52 +40
 	2200-2299 61-72 +60
@@ -84,7 +89,8 @@ bool checkPeselMonth(std::string stringPesel, std::string& errorMessage)
 	}
 
 	//wersja 3
-	int month = (stringPesel[2] - 48) * 10 + (stringPesel[3] - 48) * 1;
+	//int month = (stringPesel[2] - 48) * 10 + (stringPesel[3] - 48) * 1;
+	int month = convertCharsToInt(stringPesel[2], stringPesel[3]);
 	if (month >= 1 && month <= 12)
 		return true;
 	if (month >= 21 && month <= 32)
@@ -97,12 +103,19 @@ bool checkPeselMonth(std::string stringPesel, std::string& errorMessage)
 		return true;
 
 	//wersja 4
-	int monthV4 = (stringPesel[2] - 48) * 10 + (stringPesel[3] - 48) * 1;
+	int monthV4 = convertCharsToInt(stringPesel[2], stringPesel[3]);
 	monthV4 = monthV4 % 20;
 	if (monthV4 >= 1 && monthV4 <= 12)
 		return true;
 
+	errorMessage = "Miesi¹c w numerze jest niepoprawny";
 	return false;
+}
+
+bool checkPeselDay(std::string stringPesel, std::string& errorMessage)
+{
+	int day = convertCharsToInt(stringPesel[4], stringPesel[5]);
+
 }
 
 bool checkPesel(std::string stringPesel, std::string& errorMessage)
@@ -116,7 +129,6 @@ bool checkPesel(std::string stringPesel, std::string& errorMessage)
 	if (checkPeselMonth(stringPesel, errorMessage) == false)
 		return false;
 
-	//sprawdzenie poprawnoœci miesi¹ca
 	//sprawdzenie poprawnoœci dnia
 	//sprawdzenie cyfry kontrolnej
 
