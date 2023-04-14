@@ -115,7 +115,26 @@ bool checkPeselMonth(std::string stringPesel, std::string& errorMessage)
 bool checkPeselDay(std::string stringPesel, std::string& errorMessage)
 {
 	int day = convertCharsToInt(stringPesel[4], stringPesel[5]);
+	int month = convertCharsToInt(stringPesel[2], stringPesel[3]);
+	int year = convertCharsToInt(stringPesel[0], stringPesel[1]);
+	errorMessage = "Dzieñ w numerze pesel jest niepoprawny";
 
+	if (day == 0 || day > 31)
+		return false;
+
+	if (day == 31 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11))
+		return false;
+
+	if (month == 2 && day > 29)
+		return false;
+
+	bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+
+	if (month == 2 && day == 29 && !isLeapYear)
+		return false;
+
+	errorMessage = "";
+	return true;
 }
 
 bool checkPesel(std::string stringPesel, std::string& errorMessage)
