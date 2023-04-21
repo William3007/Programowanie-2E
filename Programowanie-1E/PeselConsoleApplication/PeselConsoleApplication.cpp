@@ -12,6 +12,20 @@ int convertCharsToInt(char firstChar, char secondChar)
 	return (firstChar - 48) * 10 + (secondChar - 48) * 1;
 }
 
+int corectYear(int month, int year)
+{
+	if (month >= 1 && month <= 12)
+		return 1900 + year;
+	if (month >= 21 && month <= 32)
+		return 2000 + year;
+	if (month >= 41 && month <= 52)
+		return 2100 + year;
+	if (month >= 61 && month <= 72)
+		return 2200 + year;
+	if (month >= 81 && month <= 92)
+		return 1800 + year;
+}
+
 std::string getPesel()
 {
 	std::string stringPesel;
@@ -117,6 +131,7 @@ bool checkPeselDay(std::string stringPesel, std::string& errorMessage)
 	int day = convertCharsToInt(stringPesel[4], stringPesel[5]);
 	int month = convertCharsToInt(stringPesel[2], stringPesel[3]);
 	int year = convertCharsToInt(stringPesel[0], stringPesel[1]);
+	year = corectYear(month, year);
 	errorMessage = "Dzieñ w numerze pesel jest niepoprawny";
 
 	if (day == 0 || day > 31)
@@ -137,6 +152,32 @@ bool checkPeselDay(std::string stringPesel, std::string& errorMessage)
 	return true;
 }
 
+bool checkPeselControlDigit(std::string stringPesel, std::string& errorMessage)
+{
+	int d0 = convertCharsToInt('0', stringPesel[0]);
+	int d1 = convertCharsToInt('0', stringPesel[1]);
+	int d2 = convertCharsToInt('0', stringPesel[2]);
+	int d3 = convertCharsToInt('0', stringPesel[3]);
+	int d4 = convertCharsToInt('0', stringPesel[4]);
+	int d5 = convertCharsToInt('0', stringPesel[5]);
+	int d6 = convertCharsToInt('0', stringPesel[6]);
+	int d7 = convertCharsToInt('0', stringPesel[7]);
+	int d8 = convertCharsToInt('0', stringPesel[8]);
+	int d9 = convertCharsToInt('0', stringPesel[9]);
+	int d10 = convertCharsToInt('0', stringPesel[10]);
+
+
+	int sum = d0 * 1 + d1 * 3 + d2 * 7 + d3 * 9
+		    + d4 * 1 + d5 * 3 + d6 * 7 + d7 * 9
+		    + d8 * 1 + d9 * 3 + d10 * 1;
+
+	if (sum % 10 == 0)
+		return true;
+
+	errorMessage = "B³êdny pesel - sprawdzenie cyfry kontrolnej";
+	return false;
+}
+
 bool checkPesel(std::string stringPesel, std::string& errorMessage)
 {
 	if (checkPeselLength(stringPesel, errorMessage) == false)
@@ -148,8 +189,11 @@ bool checkPesel(std::string stringPesel, std::string& errorMessage)
 	if (checkPeselMonth(stringPesel, errorMessage) == false)
 		return false;
 
-	//sprawdzenie poprawnoœci dnia
-	//sprawdzenie cyfry kontrolnej
+	if (checkPeselDay(stringPesel, errorMessage) == false)
+		return false;
+
+	if (checkPeselControlDigit(stringPesel, errorMessage) == false)
+		return false;
 
 	return true;
 }
