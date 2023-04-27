@@ -198,8 +198,26 @@ bool checkPesel(std::string stringPesel, std::string& errorMessage)
 	return true;
 }
 
+void ShowPeselInfo(std::string stringPesel)
+{
+	int day = convertCharsToInt(stringPesel[4], stringPesel[5]);
+	int month = convertCharsToInt(stringPesel[2], stringPesel[3]);
+	int year = convertCharsToInt(stringPesel[0], stringPesel[1]);
+	year = corectYear(month, year);
+	month = month % 20;
+
+	std::cout << "Data urodzenia: " << day << "-" << month << "-" << year << "\n";
+
+	int gender = convertCharsToInt('0', stringPesel[9]);
+	if (gender % 2 == 0)
+		std::cout << "P³eæ: ¿eñska\n";
+	else
+		std::cout << "P³eæ: mêska\n";
+}
+
 int main()
 {
+	setlocale(LC_CTYPE, "polish");
 	std::string stringPesel = getPesel();
 	std::string errorMessage = "";
 
@@ -207,6 +225,7 @@ int main()
 	{
 		//pesel poprawny
 		std::cout << "Pesel poprawny\n";
+		ShowPeselInfo(stringPesel);
 	}
 	else
 	{
