@@ -34,13 +34,14 @@ Wyświetl największą liczbę ze zbioru
 */
 void task2()
 {
-	const int size = 10;
+	const int size = 3;
+
 	int tabOfNumbers[size];
 
 	srand(time(NULL));
 	for (int i = 0; i < size; i++)
 	{
-		tabOfNumbers[i] = rand() % 100 + 1;
+		tabOfNumbers[i] = rand() % 10 + 1;
 	}
 
 	std::cout << "Liczby w tablicy:\n";
@@ -49,6 +50,31 @@ void task2()
 		std::cout << tabOfNumbers[i] << "\n";
 	}
 
+	//szukanie największej
+	int max = tabOfNumbers[0];
+	for (int i = 1; i < size; i++)
+	{
+		if (max < tabOfNumbers[i])
+			max = tabOfNumbers[i];
+	}
+	std::cout << "Największa liczba w zbiorze to " << max << "\n";
+
+	//szukanie najmniejszej
+	int min = tabOfNumbers[0];
+	for (int i = 1; i < size; i++)
+	{
+		if (min > tabOfNumbers[i])
+			min = tabOfNumbers[i];
+	}
+
+	std::cout << "Najmniejsza liczba w zbiorze to " << min << "\n";
+
+	float sum = 0;
+	for (int i = 0; i < size; i++)
+		sum = sum + tabOfNumbers[i];
+
+	std::cout << "Suma liczb: " << sum << "\n";
+	std::cout << "Średnia liczb:" << sum / size << "\n";
 
 
 }
