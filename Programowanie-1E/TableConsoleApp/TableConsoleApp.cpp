@@ -34,7 +34,7 @@ Wyświetl największą liczbę ze zbioru
 */
 void task2()
 {
-	const int size = 3;
+	const int size = 10;
 
 	int tabOfNumbers[size];
 
@@ -76,7 +76,12 @@ void task2()
 	std::cout << "Suma liczb: " << sum << "\n";
 	std::cout << "Średnia liczb:" << sum / size << "\n";
 
-
+	int count = 0;
+	float average = sum / size;
+	for (int i = 0; i < size; i++)
+		if (tabOfNumbers[i] > average)
+			count++;
+	std::cout << "Ilość liczb większa od średniej " << count << "\n";
 }
 
 int main()
