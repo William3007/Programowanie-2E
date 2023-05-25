@@ -84,7 +84,49 @@ void task2()
 	std::cout << "Ilość liczb większa od średniej " << count << "\n";
 }
 
+/*Zaimplementuj algorytm sortowania przez wybór*/
+void task3()
+{
+	const int size = 10;
+
+	int tabOfNumbers[size];
+
+	srand(time(NULL));
+	for (int i = 0; i < size; i++)
+	{
+		tabOfNumbers[i] = rand() % 10 + 1;
+	}
+
+	std::cout << "Liczby w tablicy:\n";
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << tabOfNumbers[i] << ", ";
+	}
+	std::cout << "\n";
+
+	for (int i = 0; i < size; i++)
+	{
+		int min = i;
+		for (int j = i + 1; j < size; j++)
+		{
+			if (tabOfNumbers[min] > tabOfNumbers[j])
+				min = j;
+		}
+		int tmp = tabOfNumbers[i];
+		tabOfNumbers[i] = tabOfNumbers[min];
+		tabOfNumbers[min] = tmp;
+	}
+
+	std::cout << "Liczby w tablicy po posortowaniu:\n";
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << tabOfNumbers[i] << ", ";
+	}
+	std::cout << "\n";
+
+}
+
 int main()
 {
-	task2();
+	task3();
 }
