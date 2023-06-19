@@ -4,7 +4,7 @@ void task1()
 {
 	int a;
 	int tab[50];//0,1,2
-	
+
 	a = 5;
 	tab[0] = 5;
 	tab[1] = 3;
@@ -126,7 +126,49 @@ void task3()
 
 }
 
+/*Zaimplementuj algorytm sortowania bąbelkowego*/
+void task4()
+{
+	const int size = 10;
+
+	int tabOfNumbers[size];
+
+	srand(time(NULL));
+	for (int i = 0; i < size; i++)
+	{
+		tabOfNumbers[i] = rand() % 10 + 1;
+	}
+
+	std::cout << "Liczby w tablicy:\n";
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << tabOfNumbers[i] << ", ";
+	}
+	std::cout << "\n";
+
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = 0; j < size - 1; j++)
+		{
+			if (tabOfNumbers[j] > tabOfNumbers[j + 1])
+			{
+				int tmp = tabOfNumbers[j];
+				tabOfNumbers[j] = tabOfNumbers[j + 1];
+				tabOfNumbers[j + 1] = tmp;
+			}
+		}
+	}
+
+	std::cout << "Liczby w tablicy po posortowaniu:\n";
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << tabOfNumbers[i] << ", ";
+	}
+	std::cout << "\n";
+
+}
+
 int main()
 {
-	task3();
+	task4();
 }
