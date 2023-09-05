@@ -1,9 +1,2 @@
-# klasa-1E-2022-2023-programowanie
+# klasa-2E-2023-2024-programowanie
 
-
-Grupa 1 - komputery nieparzyste
-https://forms.office.com/e/GeMhT70vqq
-
-
-Grupa 2 - komputery parzyste
-https://forms.office.com/e/vJSezkUSsr
