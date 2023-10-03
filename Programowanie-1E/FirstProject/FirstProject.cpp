@@ -7,30 +7,30 @@
 int main()
 {
     /*
-    Instrukcja do wyœwietlania informacji na standardowy strumieñ wyjœcia.
-    Domyœlnie, jesli nie zosta³o to zmienione, jest to konsola w której aplikacja
-    zosta³a uruchomiona.
-    Aby wyswietliæ na konsoli nalezy u¿yæ std::cout.
-    Na konosle wywy³amy za pomoca operatora <<.
-    Po nim musi znajdowaæ siê dana do wys³ania.
-    Instrukcjê koñczymy znakiem œrednik.
-
-    "Hello World!\n" - jest to sta³a o wartoœci tekstowej.
-    Sta³e tekstowe s¹ ograniczone znakami cudzys³owu.
+    Instrukcja do wyï¿½wietlania informacji na standardowy strumieï¿½ wyjï¿½cia.
+    Domyï¿½lnie, jesli nie zostaï¿½o to zmienione, jest to konsola w ktï¿½rej aplikacja
+    zostaï¿½a uruchomiona.
+    Aby wyswietliï¿½ na konsoli nalezy uï¿½yï¿½ std::cout.
+    Na konosle wywyï¿½amy za pomoca operatora <<.
+    Po nim musi znajdowaï¿½ siï¿½ dana do wysï¿½ania.
+    Instrukcjï¿½ koï¿½czymy znakiem ï¿½rednik.
+ 
+    "Hello World!\n" - jest to staï¿½a o wartoï¿½ci tekstowej.
+    Staï¿½e tekstowe sï¿½ ograniczone znakami cudzysï¿½owu.
     * ' (apostrof) - jesli jest jeden znak
-    * " (cudzys³ów) - jesli jest zero lub wiêcej znaków
+    * " (cudzysï¿½ï¿½w) - jesli jest zero lub wiï¿½cej znakï¿½w
 
-    W sta³ych tekstowych moga byæ wstawiane znaki specjalne. Takie znaki
-    zaczynaj¹ siê od znaku \ (backslash) po którym mo¿e siê znajdowaæ:
+    W staï¿½ych tekstowych moga byï¿½ wstawiane znaki specjalne. Takie znaki
+    zaczynajï¿½ siï¿½ od znaku \ (backslash) po ktï¿½rym moï¿½e siï¿½ znajdowaï¿½:
     * jedna litera alfabetu angielskiego
-    * trzy cyfry daj¹ce liczbê ósemkow¹
-    Przyk³adowo:
-    * \n - symbol oznaczaj¹cy now¹ liniê.
-    * \t - symbol oznaczaj¹cy znak tabulatora
-    * \\ - symbol oznaczaj¹cy znak \
-    * \' - symbol oznaczaj¹cy znak '
-    * \" - symbol oznaczaj¹cy znak "
-    * \141 - symbol ósemkowy oznaczajacy zgodnie z tablic¹ kodów ASCII znak m³aej literki a
+    * trzy cyfry dajï¿½ce liczbï¿½ ï¿½semkowï¿½
+    Przykï¿½adowo:
+    * \n - symbol oznaczajï¿½cy nowï¿½ liniï¿½.
+    * \t - symbol oznaczajï¿½cy znak tabulatora
+    * \\ - symbol oznaczajï¿½cy znak \
+    * \' - symbol oznaczajï¿½cy znak '
+    * \" - symbol oznaczajï¿½cy znak "
+    * \141 - symbol ï¿½semkowy oznaczajacy zgodnie z tablicï¿½ kodï¿½w ASCII znak mï¿½aej literki a
     */
 
     //github.com/IronLittleFox
@@ -43,11 +43,11 @@ int main()
     std::cout << "Tabulator\ttabulator\n";
 
     /*
-   56 - sta³a liczbowa
-   Sta³e liczowe mog¹ sk³adaæ siê tylko z:
+   56 - staï¿½a liczbowa
+   Staï¿½e liczowe mogï¿½ skï¿½adaï¿½ siï¿½ tylko z:
    * cyfr arabskich: 0,1,2,3,4,5,6,7,8,9
-   * znaku + lub - znajduj¹cego siê na pocz¹tku wartoœci ozaczaj¹cy znak liczby
-   * znaku . (kropka) oznaczaj¹cy granicê pomiêdzy czêœci¹ ca³kowit¹ a rzeczywist¹
+   * znaku + lub - znajdujï¿½cego siï¿½ na poczï¿½tku wartoï¿½ci ozaczajï¿½cy znak liczby
+   * znaku . (kropka) oznaczajï¿½cy granicï¿½ pomiï¿½dzy czï¿½ciï¿½ caï¿½kowitï¿½ a rzeczywistï¿½
    */
     std::cout << -56;
     std::cout << "\n";
@@ -56,40 +56,40 @@ int main()
     std::cout << +15.5;
     std::cout << "\n";
 
-    /* Jeœli wystêpuje potrzeba wyœwietlenia dwóch lub wiêcej wartoœci mo¿na
-    kontynuowaæ instrukcjê
-    ale te wartoœci nalezy rozdzieliæ znakiem <<.
+    /* Jeï¿½li wystï¿½puje potrzeba wyï¿½wietlenia dwï¿½ch lub wiï¿½cej wartoï¿½ci moï¿½na
+    kontynuowaï¿½ instrukcjï¿½
+    ale te wartoï¿½ci nalezy rozdzieliï¿½ znakiem <<.
     */
     std::cout << 125.5 << " to jest tekst " << 16 << "\n";
 
     /*
-    Zmienna – konstrukcja programistyczna posiadaj¹ca trzy podstawowe atrybuty:
-    symboliczn¹ nazwê, miejsce przechowywania i wartoœæ;
-    pozwalaj¹ca w kodzie Ÿród³owym odwo³ywaæ siê przy pomocy nazwy do wartoœci lub miejsca przechowywania.
-    Nazwa s³u¿y do identyfikowania zmiennej w zwi¹zku z tym czêsto nazywana jest identyfikatorem.
-    Miejsce przechowywania przewa¿nie znajduje siê w pamiêci komputera i okreœlane jest przez adres i d³ugoœæ danych.
-    Wartoœæ to zawartoœæ miejsca przechowywania.
-    Zmienna zazwyczaj posiada równie¿ czwarty atrybut: typ, okreœlaj¹cy rodzaj danych przechowywanych w zmiennej
-    i co za tym idzie sposób reprezentacji wartoœci w miejscu przechowywania. W programie wartoœæ zmiennej mo¿e byæ
-    odczytywana lub zastêpowana now¹ wartoœci¹, tak wiêc wartoœæ zmiennej mo¿e zmieniaæ siê w trakcie wykonywania programu,
-    natomiast dwa pierwsze atrybuty (nazwa i miejsce przechowywania) nie zmieniaj¹ siê w trakcie istnienia zmiennej.
+    Zmienna ï¿½ konstrukcja programistyczna posiadajï¿½ca trzy podstawowe atrybuty:
+    symbolicznï¿½ nazwï¿½, miejsce przechowywania i wartoï¿½ï¿½;
+    pozwalajï¿½ca w kodzie ï¿½rï¿½dï¿½owym odwoï¿½ywaï¿½ siï¿½ przy pomocy nazwy do wartoï¿½ci lub miejsca przechowywania.
+    Nazwa sï¿½uï¿½y do identyfikowania zmiennej w zwiï¿½zku z tym czï¿½sto nazywana jest identyfikatorem.
+    Miejsce przechowywania przewaï¿½nie znajduje siï¿½ w pamiï¿½ci komputera i okreï¿½lane jest przez adres i dï¿½ugoï¿½ï¿½ danych.
+    Wartoï¿½ï¿½ to zawartoï¿½ï¿½ miejsca przechowywania.
+    Zmienna zazwyczaj posiada rï¿½wnieï¿½ czwarty atrybut: typ, okreï¿½lajï¿½cy rodzaj danych przechowywanych w zmiennej
+    i co za tym idzie sposï¿½b reprezentacji wartoï¿½ci w miejscu przechowywania. W programie wartoï¿½ï¿½ zmiennej moï¿½e byï¿½
+    odczytywana lub zastï¿½powana nowï¿½ wartoï¿½ciï¿½, tak wiï¿½c wartoï¿½ï¿½ zmiennej moï¿½e zmieniaï¿½ siï¿½ w trakcie wykonywania programu,
+    natomiast dwa pierwsze atrybuty (nazwa i miejsce przechowywania) nie zmieniajï¿½ siï¿½ w trakcie istnienia zmiennej.
 
-    Aby wykorzystaæ zmienne nale¿y je zadeklarowaæ.
+    Aby wykorzystaï¿½ zmienne naleï¿½y je zadeklarowaï¿½.
     Deklaracja zmiennej w jezyku C++:
     typ_zmiennej nazwa_zmiennej;
 
-    typ_zmiennej - jest to informacja co bêdziemy przechowywaæ w zmiennej.
-    Przyk³adowe typy zmiennych:
-    * int - typ liczbowy ca³kowity; zajmuje cztery bajty w pamiêci i pozwala przechowaæ wartoœci od -2 147 483 648 do 2 147 483 647
-    * short - typ liczbowy ca³kowity; zajmuje dwa bajty i pozwala przechowaæ wartoœci	od -32 768 do 32 767
-    * float	- typ liczbowy rzeczywisty; zajmuje cztery bajty i pozwala przechowaæ wartoœci 3.4E +/- 38 (7 cyfr)
-    * bool - typ logiczny; zajmuje jeden bajt i pozwala przechowaæ wartoœci	false lub true
+    typ_zmiennej - jest to informacja co bï¿½dziemy przechowywaï¿½ w zmiennej.
+    Przykï¿½adowe typy zmiennych:
+    * int - typ liczbowy caï¿½kowity; zajmuje cztery bajty w pamiï¿½ci i pozwala przechowaï¿½ wartoï¿½ci od -2 147 483 648 do 2 147 483 647
+    * short - typ liczbowy caï¿½kowity; zajmuje dwa bajty i pozwala przechowaï¿½ wartoï¿½ci	od -32 768 do 32 767
+    * float	- typ liczbowy rzeczywisty; zajmuje cztery bajty i pozwala przechowaï¿½ wartoï¿½ci 3.4E +/- 38 (7 cyfr)
+    * bool - typ logiczny; zajmuje jeden bajt i pozwala przechowaï¿½ wartoï¿½ci	false lub true
 
-    Nazwa zmiennej musi byæ poprawnym identyfikatorem:
-    * dozwolone znaki: alfabet angielski a-z oraz A-Z, cyfry arabskie 0-9, podkreœlenie _
-    * pierwszym znakiem nie mo¿e byæ cyfra
-    * nie mo¿e byæ to s³owo kluczowe jêzyka
-    * musi byæ uniklana w swojej widocznoœci (wyt³umaczone jest to w trakcie nauki)
+    Nazwa zmiennej musi byï¿½ poprawnym identyfikatorem:
+    * dozwolone znaki: alfabet angielski a-z oraz A-Z, cyfry arabskie 0-9, podkreï¿½lenie _
+    * pierwszym znakiem nie moï¿½e byï¿½ cyfra
+    * nie moï¿½e byï¿½ to sï¿½owo kluczowe jï¿½zyka
+    * musi byï¿½ uniklana w swojej widocznoï¿½ci (wytï¿½umaczone jest to w trakcie nauki)
     */
 
 
