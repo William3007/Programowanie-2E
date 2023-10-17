@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32510.428
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirstProject", "FirstProject\FirstProject.vcxproj", "{BCFAE11D-70F6-4ACE-8470-AF2EB3683979}"
 EndProject
@@ -28,6 +28,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Tablice", "05. Tablice", "{D993C63A-F89D-4BA2-8E66-B14B8B2BA0AF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TableConsoleApp", "TableConsoleApp\TableConsoleApp.vcxproj", "{7B5F138F-8389-46F6-9436-E307856743AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Struktury", "06.Struktury", "{A31EBA32-3548-41BE-BE61-A2FE56EACAEF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StructConsoleApplication", "StructConsoleApplication\StructConsoleApplication.vcxproj", "{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +105,14 @@ Global
 		{7B5F138F-8389-46F6-9436-E307856743AD}.Release|x64.Build.0 = Release|x64
 		{7B5F138F-8389-46F6-9436-E307856743AD}.Release|x86.ActiveCfg = Release|Win32
 		{7B5F138F-8389-46F6-9436-E307856743AD}.Release|x86.Build.0 = Release|Win32
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Debug|x64.ActiveCfg = Debug|x64
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Debug|x64.Build.0 = Debug|x64
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Debug|x86.ActiveCfg = Debug|Win32
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Debug|x86.Build.0 = Debug|Win32
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Release|x64.ActiveCfg = Release|x64
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Release|x64.Build.0 = Release|x64
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Release|x86.ActiveCfg = Release|Win32
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +126,7 @@ Global
 		{B9FD6996-E27C-4E6F-A7BD-79CA60481C90} = {1A37EEDE-662F-4A0A-9FFC-3DC9E4E39F16}
 		{202C98AF-C586-4D28-A238-AD3A1B71E3BB} = {E38DFE25-7047-40F3-B194-30BD5D90FFBE}
 		{7B5F138F-8389-46F6-9436-E307856743AD} = {D993C63A-F89D-4BA2-8E66-B14B8B2BA0AF}
+		{DA7DAFCA-DC5A-408E-A925-E2F369BD15CB} = {A31EBA32-3548-41BE-BE61-A2FE56EACAEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77A83098-39B9-4A8F-A584-1CBAB34C0F7D}
